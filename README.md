@@ -9,7 +9,7 @@ Get on Steam: https://store.steampowered.com/app/524490/Shadron/
 How to use
 ----------
 
-1. [Download] this repository
+1. [Download](https://github.com/Fubaxiusz/shadron-shaders/archive/master.zip) this repository
 2. Extract the downloaded archive file somewhere
 3. Drag and drop .shadron file onto Shadron
 4. Export result by dragging window onto desktop
