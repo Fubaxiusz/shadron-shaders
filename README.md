@@ -4,7 +4,7 @@ Fubax Shadron FX shaders
 This repository collects post-processing shaders written in the GLSL Shadron shader language, that I contribute to.
 
 To get Shadron visit https://www.arteryengine.com/shadron/
-Get on Steam: https://store.steampowered.com/app/524490/Shadron/
+or get on Steam: https://store.steampowered.com/app/524490/Shadron/
 
 How to use
 ----------
