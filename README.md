@@ -1,5 +1,5 @@
-Fubax Shadron FX shaders
-========================
+Fubax Shadron shaders
+=====================
 
 This repository collects post-processing shaders written in the GLSL Shadron shader language, that I contribute to.
 
