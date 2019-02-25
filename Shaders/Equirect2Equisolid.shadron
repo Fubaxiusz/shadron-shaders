@@ -15,7 +15,7 @@ available here:
 https://www.arteryengine.com/shadron/
 */
 
-// version 1.0.1
+// version 1.0.2
 
 #include <multisample>
 
@@ -162,7 +162,7 @@ glsl vec4 Equirect2Equisolid(vec2 TexCoord)
 //////////////////////
 
 #if MSAA <= 1
-	image matcap = glsl(Equirect2Equisolid, ivec2(Size));
+	image reflection = glsl(Equirect2Equisolid, ivec2(Size));
 #else
-	image matcap = glsl(multisample<Equirect2Equisolid, MSAA>, ivec2(Size));
+	image reflection = glsl(multisample<Equirect2Equisolid, MSAA>, ivec2(Size));
 #endif
