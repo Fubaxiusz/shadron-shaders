@@ -19,6 +19,7 @@ https://www.arteryengine.com/shadron/
 
 #include <multisample>
 
+
   ////////////////////
  /////// MENU ///////
 ////////////////////
@@ -29,6 +30,7 @@ parameter int Size = 768 : range(16, 1024);
 parameter vec3 Background = vec3(0.5, 0.5, 0.5) : color();
 parameter bool Transparency = true;
 parameter vec2 Rotation = vec2(0.5, 0.0) : range(0.0, 1.0);
+
 
   /////////////////////
  /////// INPUT ///////
@@ -103,6 +105,7 @@ glsl vec2 Polar(vec2 Coordinates)
 	);
 }
 
+
   //////////////////////
  /////// SHADER ///////
 //////////////////////
@@ -131,29 +134,29 @@ glsl vec4 Equirect2Equisolid(vec2 TexCoord)
 	CartCoord = Rotate(CartCoord, Rotation);
 
 	// Convert cartesian coordinates to longitude and latitude
-	Latitude = asin(CartCoord.z);
 	Longitude = atan(CartCoord.x, CartCoord.y);
+	Latitude = asin(CartCoord.z);
 
 	// Get equirectangular UV coordinates from longitude and latitude
 	EquirectCoord.x = Longitude / radians(360.0);
 	EquirectCoord.y = Latitude / radians(180.0) + 0.5;
 
 	// Sample equirectangular panorama
-	vec4 Matcap = texture(equirectangular, EquirectCoord);
+	vec4 SphereImage = texture(equirectangular, EquirectCoord);
 
 	// Generate anti-aliased borders mask
 	float Mask = BorderMaskAA(PolarCoord.x);
 
 	// Enable transparency
-	if(Transparency) Matcap.a *= Mask;
+	if(Transparency) SphereImage.a *= Mask;
 	else
 	{
 		// Paint borders to color
-		Matcap.rgb = mix(Background, Matcap.rgb, Mask);
-		Matcap.a = 1.0; // Disable transparency
+		SphereImage.rgb = mix(Background, SphereImage.rgb, Mask);
+		SphereImage.a = 1.0; // Disable transparency
 	}
 
-	return Matcap;
+	return SphereImage;
 }
 
 
