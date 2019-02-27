@@ -13,7 +13,7 @@ available here:
 https://www.arteryengine.com/shadron/
 */
 
-// version 1.2.0 GLSL
+// version 1.2.1 GLSL
 
 
   ////////////////////
@@ -47,4 +47,4 @@ glsl vec3 DisplayLutPS(vec2 TexCoord)
  /////// OUTPUT ///////
 //////////////////////
 
-	image lut = glsl(DisplayLutPS, ivec2(Size*Size, Size));
+	image lut = glsl(DisplayLutPS, ivec2(Size*Size, Size)) : map(clamp);
