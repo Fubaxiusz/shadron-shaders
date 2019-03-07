@@ -16,16 +16,16 @@ https://www.arteryengine.com/shadron/
 // version 1.2.1 GLSL
 
 
-  ////////////////////
- /////// MENU ///////
-////////////////////
+	  ////////////
+	 /// MENU ///
+	////////////
 
 parameter int Size = 32 : range(3, 64);
 
 
-  //////////////////////
- /////// SHADER ///////
-//////////////////////
+	  //////////////
+	 /// SHADER ///
+	//////////////
 
 glsl vec3 DisplayLutPS(vec2 TexCoord)
 {
@@ -43,8 +43,8 @@ glsl vec3 DisplayLutPS(vec2 TexCoord)
 }
 
 
-  //////////////////////
- /////// OUTPUT ///////
-//////////////////////
+	  //////////////
+	 /// OUTPUT ///
+	//////////////
 
 	image lut = glsl(DisplayLutPS, ivec2(Size*Size, Size)) : map(clamp);

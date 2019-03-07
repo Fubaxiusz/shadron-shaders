@@ -20,9 +20,9 @@ https://www.arteryengine.com/shadron/
 #include <multisample>
 
 
-  ////////////////////
- /////// MENU ///////
-////////////////////
+	  ////////////
+	 /// MENU ///
+	////////////
 
 #define MSAA 4 // Multisample anti-aliasing (0 or 1 disables MSAA)
 
@@ -32,17 +32,17 @@ parameter bool Transparency = true;
 parameter vec2 Rotation = vec2(0.5, 0.0) : range(0.0, 1.0);
 
 
-  /////////////////////
- /////// INPUT ///////
-/////////////////////
+	  /////////////
+	 /// INPUT ///
+	/////////////
 
 // Source image samlping settings
 image equirectangular = input() : filter(linear);
 
 
-  /////////////////////
- ///// FUNCTIONS /////
-/////////////////////
+	  /////////////////
+	 /// FUNCTIONS ///
+	/////////////////
 
 // Generate anti-aliased border mask
 glsl float BorderMaskAA(float Radius)
@@ -106,9 +106,9 @@ glsl vec2 Polar(vec2 Coordinates)
 }
 
 
-  //////////////////////
- /////// SHADER ///////
-//////////////////////
+	  //////////////
+	 /// SHADER ///
+	//////////////
 
 glsl vec4 Equirect2Equisolid(vec2 TexCoord)
 {
@@ -160,9 +160,9 @@ glsl vec4 Equirect2Equisolid(vec2 TexCoord)
 }
 
 
-  //////////////////////
- /////// OUTPUT ///////
-//////////////////////
+	  //////////////
+	 /// OUTPUT ///
+	//////////////
 
 #if MSAA <= 1
 	image matcap = glsl(Equirect2Equisolid, ivec2(Size));
