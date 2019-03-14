@@ -15,7 +15,7 @@ available here:
 https://www.arteryengine.com/shadron/
 */
 
-// version 1.0.3
+// version 1.0.4
 
 #include <multisample>
 
@@ -29,7 +29,7 @@ https://www.arteryengine.com/shadron/
 parameter int Size = 768 : range(16, 1024);
 parameter vec3 Background = vec3(0.5, 0.5, 0.5) : color();
 parameter bool Transparency = true;
-parameter vec2 Rotation = vec2(0.5, 0.0) : range(0.0, 1.0);
+parameter vec2 Rotation = vec2(0.5, 0.5) : range(0.0, 1.0);
 
 
 	  /////////////
@@ -57,8 +57,8 @@ glsl vec3 Rotate(vec3 Coordinates, vec2 Angle)
 {
 	Angle = Angle - 1.0; // Invert angle
 
-	float AngleX = radians(180.0)*Angle.x; // Rotation X angle in radians
-	float AngleY = radians(180.0)*(Angle.y * 2.0 - 1.0); // Rotation Y angle in radians
+	float AngleX = radians(180.0)*(1.0-Angle.y); // Rotation X angle in radians
+	float AngleY = radians(180.0)*(Angle.x * 2.0 - 1.0); // Rotation Y angle in radians
 
 	float SinX = sin(AngleX); // Sine of rotation X angle
 	float CosX = cos(AngleX); // Cosine of rotation X angle
