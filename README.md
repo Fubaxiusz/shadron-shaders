@@ -21,3 +21,9 @@ Check out [the documentation](https://www.arteryengine.com/shadron/doc/) to get 
 
 
 A collection of post-processing shaders written for Shadron that I contribute to. https://www.arteryengine.com/shadron/
+
+Some shaders examples
+---------------------
+![](https://i.imgur.com/vZJuCQf.jpg)
+![](https://i.imgur.com/FabAoGo.jpg)
+![](https://i.imgur.com/brGP4Ei.gif)
